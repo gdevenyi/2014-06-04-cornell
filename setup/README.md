@@ -7,6 +7,13 @@ title: Setup Scripts
 Students
 ========
 
+Download these two files and save them:
+
+[swc-installation-test-1.py](swc-installation-test-1.py)  
+[swc-installation-test-2.py](swc-installation-test-2.py)
+
+
+
 This directory contains scripts for testing your machine to make sure
 you have the software you'll need for your bootcamp installed.  See
 the comments at the head of each script for more details, but you'll
