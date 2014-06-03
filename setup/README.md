@@ -7,9 +7,11 @@ title: Setup Scripts
 Students
 ========
 
+
 ###Files for the bootcamp:
 
-Download this [molecules.zip](/2014-06-04-cornell/novice/shell/molecules.zip) file to use with your shell scripts.
+
+Download this [scripting.zip](/2014-06-04-cornell/novice/shell/scripting.zip) and unzip it to follow alone with the scripting examples.
 
 ### Files for troubleshooting python installations
 
