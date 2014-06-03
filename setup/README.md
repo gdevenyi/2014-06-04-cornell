@@ -11,7 +11,7 @@ Students
 ###Files for the bootcamp:
 
 
-Download this [scripting.zip](/2014-06-04-cornell/novice/shell/scripting.zip) and unzip it to follow alone with the scripting examples.
+Download this [scripting.zip](/2014-06-04-cornell/novice/shell/scripting.zip) and unzip it to follow along with the scripting examples.
 
 ### Files for troubleshooting python installations
 
