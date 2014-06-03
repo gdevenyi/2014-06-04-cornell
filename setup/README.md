@@ -7,12 +7,14 @@ title: Setup Scripts
 Students
 ========
 
+Files for the bootcamp:
+
+Download this [molecules.zip](/2014-06-04-cornell/novice/shell/molecules.zip) file to use with your shell scripts.
+
 Download these two files and save them:
 
 [swc-installation-test-1.py](swc-installation-test-1.py)  
 [swc-installation-test-2.py](swc-installation-test-2.py)
-
-Download this [molecules.zip](/novice/shell/molecules.zip) file to use with your shell scripts.
 
 This directory contains scripts for testing your machine to make sure
 you have the software you'll need for your bootcamp installed.  See
