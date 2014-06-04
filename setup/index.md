@@ -8,7 +8,9 @@ Students
 ========
 
 
-###Files for the bootcamp:
+###Links for the bootcamp:
+
+The class Etherpad is at [https://etherpad.mozilla.org/SWC-Cornell](https://etherpad.mozilla.org/SWC-Cornell)
 
 Download this [molecules.zip](molecules.zip) file and unzip it to follow along with the pipes and filters examples.
 
