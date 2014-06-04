@@ -10,6 +10,7 @@ Students
 
 ###Files for the bootcamp:
 
+Download this [molecules.zip](molecules.zip) file and unzip it to follow along with the pipes and filters examples.
 
 Download this [scripting.zip](/2014-06-04-cornell/novice/shell/scripting.zip) and unzip it to follow along with the scripting examples.
 
