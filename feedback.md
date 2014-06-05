@@ -1,4 +1,8 @@
-# Feedback from the Bootcamp sticky notes:
+---
+layout: lesson
+root: .
+title: Feedback
+---
 
 ## Could be improved
 - Longer than 2 days
