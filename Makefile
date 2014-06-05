@@ -49,6 +49,7 @@ all : commands
 # appear in the final book-format version of the notes.
 MOST_SRC = \
 	intro.md \
+	feedback.md \
 	team.md \
 	novice/shell/index.md $(sort $(wildcard novice/shell/??-*.md)) \
 	novice/git/index.md $(sort $(wildcard novice/git/??-*.md)) \
