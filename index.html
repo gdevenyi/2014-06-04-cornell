@@ -123,6 +123,13 @@ can be found at the following links:
 <hr/>
 
 <!--
+    This block includes the Eventbrite registration widget if 'eventbrite' has been set in the header.
+-->
+{% if page.eventbrite %}
+<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" width="100%" scrolling="auto" height="250"></iframe>
+{% endif %}
+
+<!--
     Edit the setup instructions in _includes/setup.html to reflect your bootcamp.
     (In particular, most bootcamps teach either Python or R, not both.)
 -->
@@ -137,12 +144,6 @@ can be found at the following links:
   <em>before</em> the start of your bootcamp.
 </p>
 
-<!--
-    This block includes the Eventbrite registration widget if 'eventbrite' has been set in the header.
--->
-{% if page.eventbrite %}
-<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" width="100%" scrolling="auto" height="250"></iframe>
-{% endif %}
 
 
 {% include setup.html %}
