@@ -19,14 +19,6 @@ eventbrite: 11562775573
     Please use three-letter month names for the 'humandate' field.
 -->
 
-
-<!--
-    This block includes the Eventbrite registration widget if 'eventbrite' has been set in the header.
--->
-{% if page.eventbrite %}
-<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" width="100%" scrolling="auto" height="250"></iframe>
-{% endif %}
-
 <h2>Teaching Materials</h2>
 <p>Thank you all for a successful bootcamp! Links to all the instructor materials
 can be found at the following links:
@@ -144,5 +136,13 @@ can be found at the following links:
   (or at least to download the installers)
   <em>before</em> the start of your bootcamp.
 </p>
+
+<!--
+    This block includes the Eventbrite registration widget if 'eventbrite' has been set in the header.
+-->
+{% if page.eventbrite %}
+<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" width="100%" scrolling="auto" height="250"></iframe>
+{% endif %}
+
 
 {% include setup.html %}
