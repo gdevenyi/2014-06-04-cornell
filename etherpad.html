@@ -1,0 +1,816 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>/SWC-Cornell</title>
+</head>
+<body><br
+/>Hannah<br
+/>Unix shell, git and github, python, databases and sql<br
+/>Don't work 12 hour days!<br
+/><br
+/>Books:<br
+/>How Learning Works<br
+/><a href="http://www.amazon.com/How-Learning-Works-Research-Based-Principles/dp/0470484101">http://www.amazon.com/How-Learning-Works-Research-Based-Principles/dp/0470484101</a><br
+/>Making Software: What Really Works and Why We Believe It<br
+/><a href="http://www.amazon.com/Making-Software-Really-Works-Believe/dp/0596808321/ref=sr_1_1?s=books&ie=UTF8&qid=1401888097&sr=1-1&keywords=Making+Software%3A+What+Really+Works+and+Why+We+Believe+It">http://www.amazon.com/Making-Software-Really-Works-Believe/dp/0596808321/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1401888097&amp;sr=1-1&amp;keywords=Making+Software%3A+What+Really+Works+and+Why+We+Believe+It</a><br
+/><br
+/>######<br
+/><b><u>UNIX Shell</u></b><br
+/>######<br
+/><br
+/>$ clear<br
+/># will clear the terminal<br
+/><br
+/>$ cd<br
+/># resets the command interface<br
+/><br
+/>$ whoami<br
+/># gives username<br
+/><br
+/>$ pwd<br
+/># prints working directory<br
+/><br
+/>$ ls<br
+/># lists files<br
+/><br
+/>$ ls -F<br
+/># lists directories with / afterward to distinguish directories vs. files<br
+/><br
+/>$ ls directory_name<br
+/>#gives files' name under this directory<br
+/><br
+/>leading slash at the front of a name tells the computer you want to start at the beginning of a file system (root)<br
+/><br
+/>Changing directories:<br
+/>$ cd [path to the directory you want to change to]<br
+/><br
+/>$ clear&nbsp;<br
+/>clears terminal screen, puts cursor at top<br
+/><br
+/>$ cd ..<br
+/># changes directory to up one directory<br
+/><br
+/># Periods:<br
+/>. -&gt; indicated current directory<br
+/>.. -&gt; indicates directory above current directory<br
+/><br
+/># e.g.,<br
+/>$ ls .<br
+/># lists contents of current directory<br
+/>$ cd ..<br
+/># changes directory to the directory above<br
+/><br
+/>$ ls -a<br
+/># lists all files<br
+/><br
+/>pushing Tab key can finish the names of the files/directories for you (tab complete)<br
+/>$ ls d&nbsp;&nbsp; changes to $ ls data<br
+/><br
+/># Tab complete can help you - make sure you don't make typos - make sure you are referring to actual files, directories, etc.<br
+/><br
+/>$ mkdir [XXX]<br
+/># make directory<br
+/># this will make the directory wherever you currently are<br
+/># so, make sure you are in the directory you want this new directory to be<br
+/><br
+/># e.g.<br
+/>$ mkdir thesis<br
+/>$ cd thesis<br
+/>$ pwd<br
+/><br
+/>$ nano draft.txt<br
+/># opens the nano text editor, with a new file that will be called draft.txt<br
+/># you can just type into the editor<br
+/># note: ^X means [control button]+X<br
+/># in nano, this is the command to exit<br
+/># ^O is the command to "write out" - aka save<br
+/><br
+/>$ rm [XXX]<br
+/># removes a file. e.g.,<br
+/>$ rm draft.txt<br
+/># will remove your file.&nbsp; "deleting is forever"<br
+/># BEWARE - there is no "going back", and no "are you sure you want to delete this?"<br
+/># rm is only for files - i.e., it will not delete a directory<br
+/>"with great power comes great responsibility"&nbsp;<br
+/>$ rm -i&nbsp;<br
+/>#interactive, you tell it y/n as it goes through files to remove them<br
+/><br
+/>$ rmdir [XXX]<br
+/># removes directory<br
+/># in this case, it will not want to remove the directory unless it is empty. However,<br
+/>$ rm -r [XXX] removes the directory with all the content of the directory (recursive removal)<br
+/><br
+/>$ mv [XXX] [YYY]<br
+/># renames the file within the same directory or moves to a different directory<br
+/># e.g.,<br
+/>$ mv file.txt file2.txt<br
+/># will rename the file.txt to file2.txt, deleting the original file.txt<br
+/>$ mv file.txt ..<br
+/># will move the file to the directory above, still called file.txt<br
+/><br
+/>$ mv [XXX] .<br
+/># moves XXX to the current directory<br
+/># e.g.,<br
+/>$ mv ../file.txt .<br
+/># this will move the file.txt, which is currently in the directory above, to the directory you are in now<br
+/><br
+/>$ cp file_name different_directory/newname<br
+/># copy a file to a different directory and give it a new name (optional)<br
+/><br
+/><br
+/>#oh no there's a space in my file name<br
+/>#overcome by using quotes<br
+/>$"my thesis.txt"<br
+/>or $ my/ thesis.txt<br
+/>Can also use tab complete<br
+/><br
+/>#"~" will direct to home directory for example:&nbsp;<br
+/>$ cd ~<br
+/>$ cd ~/directory_in_home_directory<br
+/><br
+/>######<br
+/><b>MOLECULES AND SCRIPTS</b><br
+/>######<br
+/><br
+/>Molecules and Scripts download link:<br
+/><a href="http://gdevenyi.github.io/2014-06-04-cornell/setup/">http://gdevenyi.github.io/2014-06-04-cornell/setup/</a><br
+/><a href="http://gdevenyi.github.io/2014-06-04-cornell/setup/">http://gdevenyi.github.io/2014-06-04-cornell/setup/</a><br
+/>Thanks!<br
+/><br
+/>$ wc *.pdb<br
+/># word count on all files that have a .pdb extension<br
+/># * is a "wild card" character [<a href="http://unix.t-a-y-l-o-r.com/USwild.html">http://unix.t-a-y-l-o-r.com/USwild.html</a>]<br
+/>$ wc p*.pdb<br
+/># will perform a word count on all files that start with p and end with .pdb<br
+/>eg. $wc p*.p?? and $wc p*.p*<br
+/>wc ouput:&nbsp;<br
+/>lines/words/characters<br
+/><br
+/><u>Wild card symbols</u><br
+/>* matches to everything regardless of length<br
+/>? matches to only one symbol<br
+/>[XY] matches things that contain anything (here, X or Y) in the brackets<br
+/><br
+/>$ wc -l # just lines<br
+/>$ wc -w #just words<br
+/>$ wc -c #characters<br
+/><br
+/># output of any command into a file using "&gt;"<br
+/># e.g.,<br
+/>$ wc -l *.pdb &gt; lengths.txt<br
+/># takes the length values from all files that end in .pdb, and outputs it to a (new) file called lengths.txt<br
+/><br
+/>$ cat example.txt<br
+/>#displays contents of file "example.txt"<br
+/># outputs everything in the file onto the screen<br
+/>$ head example.txt<br
+/># will ouput only the beginning of files<br
+/># add "-#" to show the number of lines at the beginning you'd like to see eg<br
+/>$ head -3 example.txt<br
+/>#for end use "tail"<br
+/><br
+/>$ sort example.txt<br
+/># displays the sorted file (default is by the first column?, default low to high)<br
+/># default is characters - i.e., it may not recognize numbers.<br
+/>$ sort -n example.txt<br
+/># tells it to sort by numbers, not characters<br
+/><br
+/>type sort (or wc) and press Enter, it's waiting for further input<br
+/>Ctrl + C (kill the command)<br
+/>Ctrl + D (end of the file)<br
+/><br
+/>$ head file.txt<br
+/># displays the top 10 lines of a file<br
+/>$ head -1 file.txt<br
+/># displays the first 1 line of a file<br
+/>$ tail -1 file.txt<br
+/># displays the last line of a file<br
+/><br
+/>### Using "pipes" ( | ) to chain commands together<br
+/># Pipes allow us to send the output from one command to the next command. e.g.,<br
+/>$ sort lengths.txt | head -1<br
+/># sorts the file lengths.txt, takes this sorted output, and then sends it to the head command, where we are asking it to display only the first line<br
+/># another example, putting it all together:<br
+/>$ wc -l *.pdb | sort | head -1<br
+/># This does the word count (wc) on any file with .pdb extension (*.pdb), reports only the line count (-l), sends output ( | ) to the sort command, which sorts the file from lowest to highest, sends that output ( | ) to the head command, where it displays only the first line (-1)<br
+/><br
+/><u>Help with unix</u><br
+/>type man sort and it will list all of the commands<br
+/># (manual)<br
+/># or google...<br
+/># type q to exit the manual page<br
+/><br
+/>$ rm -i *.pdb<br
+/>#flag -i gives the prompt (double check that you indeed want to remove/move the file)<br
+/><br
+/># Making loops<br
+/>$ for filename in *.pdb<br
+/># assigns a variable called "filename", which will be a list of&nbsp; the .pdb files<br
+/>&gt; do<br
+/>&gt; head -2 $filename #(don't forget to put $ in front of the for variable everywhere within the cycle)<br
+/>&gt; done<br
+/><br
+/># everything between "do" and "done" is the loop<br
+/># "filename" is the variable within this loop<br
+/># Choose your variable names wisely! Make them informative and use consistent conventions. If everything is called "x" or "foo", it will be very hard to go back to your files and know what's happening. Do not use spaces in filenames or each word will be recognized as a different entity.&nbsp; You may use spaces if you surround the filename in quotes.<br
+/><br
+/>$ for filename in *.pdb<br
+/>&gt;do<br
+/>&gt;echo $filename<br
+/>&gt;head -100 $filename | tail -20<br
+/>&gt;done<br
+/><br
+/>#echo: print the value of filename to screen<br
+/># i.e., print the entire contents of the file (which we are referring to as "filename")<br
+/>#show all the last 20 lines in the first 100 lines of the file<br
+/># it will repeat this command for each item in filename (everything that ends with .pdb)<br
+/><br
+/>$ echo [XXX]<br
+/># prints whatever is in [XXX]<br
+/># great for testing the loops as it doesn't actually do anything e.g.&nbsp;<br
+/>$ for filename in *.pdb<br
+/>&gt; do<br
+/>&gt; echo "$filename"<br
+/>&gt; done<br
+/><br
+/>$ for filename in *.pdb<br
+/>&gt;do<br
+/>&gt;echo mv $filename original-$filename<br
+/>&gt;done<br
+/>UP arrow changes the four line command to a single line<br
+/># UP arrow will pull up the last command that you typed. You can press it over and over to cycle through the previous commands you've entered.<br
+/># If you entered a for loop previously, it will report it on a single line, separated by semicolons<br
+/><br
+/>$ for filename in *.pdb; do mv $filename original-$filename; done<br
+/># for every file that ends with .pdb, add "original-" to the beginning of its name<br
+/><br
+/>$ history<br
+/># list all the commands done in the session<br
+/>$ !762<br
+/># run previous command number 762 again<br
+/>$ history | tail -10<br
+/># list the most recent 10 commands<br
+/>$ !!&nbsp;<br
+/># repeat the previous command again<br
+/><br
+/># Making a simple script<br
+/>$ nano scriptname.sh<br
+/># opens nano, in which we can enter our script. Save it, and then execute by typing<br
+/>$ bash scriptname.sh [arguments for variables in our script]<br
+/><br
+/>*nano script examples<br
+/>head -20 $1 | tail -5<br
+/>head $2 $1 | tail $3<br
+/><br
+/>Description of shell script example middle.sh:<br
+/># select lines from middle of a file<br
+/>#Usage: middle.sh filename -end_line -number_of_lines<br
+/>head $2 $1 | tail $3<br
+/><br
+/># to execute this script, after saving in the nano editor and exiting<br
+/>$ bash middle.sh filename -100 -5<br
+/><br
+/># count lines of file list, then sort<br
+/># usage: sorted.sh filename(s)<br
+/>wc -l $1 | sort -n<br
+/># $1 will refer to the first argument after running this .sh<br
+/>wc -l $* | sort -n<br
+/># using $* allows for a series of files to be run through the script.<br
+/><br
+/># Great way to general .sh file is to use already typed commands, i.e.<br
+/>$ history |tail -10| head -5 &gt; figure-generation.sh<br
+/># This creates a figure-generation.sh that contains commands from the history<br
+/><br
+/># just commands without the numbers in the front (not in git bash)<br
+/>$ history |tail -10| head -5 | colrm 1 7<br
+/><br
+/>$ grep<br
+/># allows you to find a string of text in a file. e.g.,<br
+/>$ grep 98 *.pdb<br
+/># find all lines in all files that end with .pdb that have 98 at some point.<br
+/>$ grep -w 37 *.pdb<br
+/># limits it to "words" of 37 - i.e., anywhere that has 37 standing alone at some point<br
+/>$ grep atom *.pdb<br
+/># won't find anything - case sensitive!<br
+/>$ grep ATOM *.pdb<br
+/># OR<br
+/>$ grep -i atom *.pdb<br
+/># case insensitive search<br
+/>$ grep -v ATOM *.pdb<br
+/># -v displays everything that does NOT match our search item<br
+/><br
+/># Check the type of the documents, if not text probably don't want to parse them in shell<br
+/>$ file *<br
+/>this will list file names and type of file for each<br
+/><br
+/>######<br
+/><b><u>Building Programs with Python</u></b><br
+/>######<br
+/><br
+/><a href="http://files.software-carpentry.org/">http://files.software-carpentry.org/</a><br
+/><br
+/>on a mac, open terminal, go to the working directory and type "ipython notebook"<br
+/>on a mac, the new tab that opened in the terminal WILL NOT have the name of the directory at the top, just house/, that is ok<br
+/><br
+/>windows --&gt; programs --&gt; Anaconda --&gt; Launcher<br
+/>navigate to directory that contains inflammation files<br
+/>$ipython notebook<br
+/># Will launch the ipython notebook in your browser.<br
+/># There, you can create a new notebook<br
+/><br
+/>shift+enter - &gt; output in the ipython notebook<br
+/><br
+/>$ import numpy&nbsp;<br
+/>#loads numpy package<br
+/><br
+/>$ numpy.loadtxt(fname='inflammation-01.csv', delimiter=",")<br
+/># loads our file, using the numpy package's command, loadtxt, with filename = inflammation-01.csv, and it is a comma-separated file.<br
+/># in general the commands are structured as name_of_the_library.function()<br
+/><br
+/>$ weight_kg=55<br
+/>$ print weight_kg<br
+/># assign a value to a variable, and then print it<br
+/>$ print 'weight in pounds', 2.2*weight_kg<br
+/>#output: weight in pounds 121.0<br
+/><br
+/>$ weight_kg=57.5<br
+/>$ print weight_kg<br
+/># override the value and reprint it<br
+/><br
+/>$ weight_lb=2.2*weight_kg<br
+/>$ print 'weight in kilograms:', weight_kg, 'and in pounds: ', weight_lb<br
+/># output: weight in kilograms: 57.5 and in pounds:&nbsp; 126.5<br
+/>$ print 'weight in kilograms is now: ', weight_kg, 'and weight in pounds is still', weight_lb<br
+/># output: weight in kilograms is now:&nbsp; 57.5 and weight in pounds is still 126.5<br
+/><br
+/># quotes can be used for text either "xxx" or 'xxx', just need to be consistent<br
+/><br
+/>$ data=numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')<br
+/># save the values in to variable data<br
+/><br
+/>$ type(data)<br
+/># tells you what data's type is (string, int, array, etc)<br
+/>$ print data.shape<br
+/># output (60L, 40L), 60 rows and 40 columns<br
+/><br
+/>$ print 'first value in data:', data[0,0]<br
+/># counter starts with 0 instead of 1; [0,0] means first row and first column<br
+/># [row values, column values]&nbsp;<br
+/>$ print 'middle value in data:', data[30,20]<br
+/># 31st row and 21st column, Python starts from 0...<br
+/><br
+/>$ print data[0:4, 0:10]<br
+/># this does not include row 5 (4 in python) and column 11 (10 in python)<br
+/><br
+/>$ print data[0:10:3, 0:10:2]<br
+/># start from row 0 to row 10, jumping by 3, so displaying rows 0, 3, 6, and 9<br
+/>#0 2 4 6 8<br
+/>#3<br
+/>#6<br
+/>#9<br
+/><br
+/># list slicing in python takes the format:<br
+/># alist[start:end:stride]<br
+/># where the slice will begin at start, finish at end (non-inclusive), in steps of length stride<br
+/><br
+/>$ small=data[:3, 36:]<br
+/>$ print small<br
+/># start from 0 to 2 in rows (3 rows in total); and start from 37 to the end in columns<br
+/><br
+/>$ print data.mean()<br
+/># mean is a method of the array, it's a function, so a () is need'<br
+/>$ print 'maximum inflammation:', data.max()<br
+/>$ print data.min()<br
+/>$ print data.std()<br
+/><br
+/>$ patient_0=data[0,:]<br
+/>$ print 'maximum inflammation for patient 0:', patient_0.max()<br
+/># save patient_0 as a variable<br
+/>$ print 'maximum inflammation for patient 0:', data[0,:].max()<br
+/># no variable is saved<br
+/><br
+/>#get information about function i.e. a data mean<br
+/>#data.mean(&nbsp;<br
+/>#open bracket prompts function options<br
+/>$ print data.mean(axis=0)<br
+/># output: an array of the average in each column, meaning the avg value of all patients every day<br
+/>$ print data.mean(axis=1)<br
+/># average per patient, the average of each row<br
+/># the default is axis=NONE, meaning taking the average of all elements<br
+/><br
+/>$ element="oxygen"<br
+/>$ print "first three", element[0:3]&nbsp; oxy<br
+/>$ print "last three", element[3:6] gen<br
+/>$ print element [:4] oxyg<br
+/>$ print element [4:] en<br
+/>$ print element [-1] # the last element in the string<br
+/># n //negative sign means python starts from the end and count backwards<br
+/>$ print element [3:3]<br
+/># it's an empty string and it'll give you nothing<br
+/>$ print element[0:3] + element [3:6]<br
+/><br
+/>##############################<br
+/>#######&nbsp;&nbsp;&nbsp; Plotting in Python&nbsp; #####<br
+/>##############################<br
+/><br
+/>%matplotlib<br
+/># % indicates that it's notebook specific command "MAGIC"<br
+/><br
+/>$ %matplotlib inline<br
+/>$ from matplotlib import pyplot<br
+/>$ pyplot.imshow(data)<br
+/>$ pyplot.show()<br
+/># by default blue are low values and red are high values<br
+/><br
+/>$ ave_inflammation=data.mean(axis=0)<br
+/>$ pyplot.plot(ave_inflammation)<br
+/>$ pyplot.show()<br
+/><br
+/># Note, depending on when you type pyplot.show, you can determine which plots are displayed separately vs. together. E.g.,<br
+/>$ pyplot.plot(data.max(axis=0))<br
+/>$ pyplot.show()<br
+/>$ pyplot.plot(data.min(axis=0))<br
+/>$ pyplot.show()<br
+/><br
+/># As compared to...<br
+/>$ pyplot.plot(data.max(axis=0))<br
+/>$ pyplot.plot(data.min(axis=0))<br
+/>$ pyplot.show()<br
+/><br
+/># can use shortcuts for the names of the libraries<br
+/>$ import numpy as np<br
+/>$ from matplotlib import pyplot as plt<br
+/># then can call plt.plot() instead of pyplot.plt()<br
+/><br
+/>$ import numpy as np<br
+/>$ from matplotlib import pyplot as plt<br
+/>$ data=np.loadtxt(fname='inflammation-01.csv', delimiter=',')<br
+/>$ plt.figure(figsize=(10.0, 3.0))&nbsp;<br
+/># setting the dimensions of the figures, 10 by 3<br
+/>$ plt.subplot(1,3,1)<br
+/>$ plt.ylabel('average')<br
+/>$ plt.plot(data.mean(0))<br
+/>$ plt.subplot(1,3,2)<br
+/>$ plt.ylabel('max')<br
+/>$ plt.plot(data.max(0))<br
+/>$ plt.subplot(1,3,3)<br
+/>$ plt.ylabel('min')<br
+/>$ plt.plot(data.min(0))<br
+/>$ plt.tight_layout()<br
+/>$ plt.show()<br
+/># default units on figsize are inches<br
+/><br
+/>########################<br
+/>### Functions in Python ###<br
+/>########################<br
+/><br
+/># Make sure the body of the function is indented on the left, that's how Python recognizes the beginning and the end of the function<br
+/><br
+/>#something to note:<br
+/>$ def fahr_to_kelvin(temp):<br
+/>$&nbsp;&nbsp;&nbsp;&nbsp; return ((temp-32)*(5/9))+273.15<br
+/># a tab at the very beginning before return<br
+/># 5/9=0 5 and 9 are both integers so Python gives you an integer output.<br
+/># so use 5.0/9, or 5/9.0<br
+/><br
+/>#Coding Procedure<br
+/>$ def fahr_to_kelvin(temp):<br
+/>$&nbsp;&nbsp;&nbsp;&nbsp; return ((temp-32)*(5.0/9.0))+273.15<br
+/>$ print "freezing point of water:", fahr_to_kelvin(32)<br
+/>$ print "boiling point of water:", fahr_to_kelvin(212)<br
+/>#output:fzp: 273.15 blp: 373.15<br
+/>$ def kelvin_to_celsius(temp):<br
+/>$&nbsp;&nbsp;&nbsp;&nbsp; return temp -273.15<br
+/>$ print "absolute zero in Celsius:", kelvin_to_celsius(0.0)<br
+/>#output:-273.15<br
+/>#nested functions<br
+/>$ def fahr_to_celsius(temp):<br
+/>$&nbsp;&nbsp;&nbsp;&nbsp; temp_k=fahr_to_kelvin(temp)<br
+/>$&nbsp;&nbsp;&nbsp;&nbsp; result=kelvin_to_celsius(temp_k)<br
+/>$&nbsp;&nbsp;&nbsp;&nbsp; return result<br
+/>$ print "freezing water in Celsius:", fahr_to_celsius(32.0)<br
+/>#output:0.0<br
+/><br
+/>print fence(2,3)<br
+/>print fence(2,"bar")<br
+/>#implicit typing "string" vs integer<br
+/><br
+/># A good way to document you code is to use Markdown. From ipython notebook it can be inserted anywhere by using Insert-&gt;Cell and changing the type of the Cell to Markdown<br
+/><br
+/>#use call stack so you don't have to define local and global variables<br
+/><br
+/>import numpy as np<br
+/>from matplotlib import pyplot as plt<br
+/><br
+/>def analyze(filename):<br
+/>&nbsp;&nbsp;&nbsp; data=np.loadtxt(fname=filename, delimiter=',')<br
+/>&nbsp;&nbsp;&nbsp; plt.figure(figsize=(10.0, 3.0))<br
+/>&nbsp;&nbsp;&nbsp; plt.subplot(1,3,1)<br
+/>&nbsp;&nbsp;&nbsp; plt.ylabel('average')<br
+/>&nbsp;&nbsp;&nbsp; plt.plot(data.mean(0))<br
+/>&nbsp;&nbsp;&nbsp; plt.subplot(1,3,2)<br
+/>&nbsp;&nbsp;&nbsp; plt.ylabel('max')<br
+/>&nbsp;&nbsp;&nbsp; plt.plot(data.max(0))<br
+/>&nbsp;&nbsp;&nbsp; plt.subplot(1,3,3)<br
+/>&nbsp;&nbsp;&nbsp; plt.ylabel('min')<br
+/>&nbsp;&nbsp;&nbsp; plt.plot(data.min(0))<br
+/>&nbsp;&nbsp;&nbsp; plt.tight_layout()<br
+/>&nbsp;&nbsp;&nbsp; plt.show()<br
+/><br
+/>analyze('inflammation-01.csv')<br
+/>analyze('inflammation-02.csv')<br
+/><br
+/>########################<br
+/>###&nbsp;&nbsp;&nbsp; Loops in Python&nbsp;&nbsp;&nbsp; ###<br
+/>########################<br
+/>use:<br
+/>$def print_characters(input):<br
+/>$&nbsp;&nbsp;&nbsp; for char in input:<br
+/>$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print char<br
+/>$print_characters('lead')<br
+/>instead of:<br
+/>$def printcharacters(input):<br
+/>$&nbsp;&nbsp;&nbsp; print input[0]<br
+/>$&nbsp;&nbsp;&nbsp; print input[1]<br
+/>$&nbsp;&nbsp;&nbsp; print input[2]<br
+/>$&nbsp;&nbsp;&nbsp; print input[3]<br
+/>$printcharacters('lead')<br
+/><br
+/># example of a string<br
+/>$odds=[1,3,6,7]<br
+/>$print odds<br
+/>$for number in odds:<br
+/>$&nbsp;&nbsp;&nbsp; print number<br
+/>#odds[3]=9<br
+/><br
+/>$ import glob<br
+/># glob will import files that match a pattern<br
+/>$ print glob.glob('*.csv') #uses glob function in glob library, lists all csv files<br
+/><br
+/>$ filenames=glob.glob('*.csv') # import names of files that end with '.csv' into list called filenames<br
+/><br
+/># now the for loop:<br
+/><br
+/>$ for f in filenames:&nbsp;<br
+/>&nbsp;&nbsp;&nbsp; print f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # print the name of the file above the plot<br
+/>&nbsp;&nbsp;&nbsp; analyze(f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # run analyze function to plot avg, max and min values<br
+/><br
+/><br
+/><a href="http://docs.scipy.org/doc/numpy/reference/">http://docs.scipy.org/doc/numpy/reference/</a><br
+/><a href="http://nbviewer.ipython.org/">http://nbviewer.ipython.org/</a><br
+/><br
+/><br
+/>######################<br
+/>#Version Control with Git#<br
+/>######################<br
+/><br
+/>git + verb - types of commands in Git<br
+/><br
+/>$git init&nbsp; #initialize<br
+/>$ git config --global user.name "Your Name"<br
+/>$ git config --global color.ui "auto"<br
+/>$ git config --global user.email "my email"<br
+/>$ git config --global core.editor "nano"<br
+/>$git status #gives current status; this is where you want to finish the day to be sure all commits are performed: should say "nothing to commit, working directory clean"<br
+/>$ nano draft.txt #make file, then add it to repository by next command<br
+/>$ git add draft.txt # stage the file<br
+/>$ git commit # commit the staged file (but not the ones that haven't been added)<br
+/>$ git log # shows the history of commits, unique number (hash) given, if you get stuck in scroll mode, press 'q' to exit out<br
+/>$ git diff # shows the difference between the current repository and the last commit<br
+/>$ git reset --hard # reset the repository to last commit, for example if you want remove the recent changes that are not committed<br
+/>$ git diff <u>unique number of some commit</u> # shows the changes since that commit<br
+/>$ git log | grep search_term #search log for specific log entry<br
+/># (press "Q" to exit the git log)<br
+/>$ git checkout Unique_Number #the Unique_Number is from the log entry of a previous version you want to see<br
+/>$git checkout master #exit detached HEAD state<br
+/>$touch name.dat creates an empty data file<br
+/>$.gitignore .fileformat # ignores file names we don't want to track&nbsp;<br
+/><br
+/><br
+/><br
+/>#### GITHUB #####<br
+/><br
+/># Can just use this after the directory is set<br
+/>$ git push<br
+/># resync your local copy to the online repository<br
+/><br
+/>$ git clone &lt;url from HTTPS clone&gt; &lt;name of clone&gt;<br
+/># clones a repository from the online version<br
+/><br
+/>$ git pull<br
+/># pulls online version of repository to local version<br
+/><br
+/><br
+/># Branches<br
+/># Usually don't work on a master branch (master branch is for working versions)<br
+/><br
+/>$ git branch &lt;branch name&gt;#creates a branch<br
+/>$ git checkout &lt;branch name&gt;<br
+/># changes active branch to the named branch<br
+/>$ git push -u origin &lt;branch name&gt;<br
+/># explicitly pushes the named branch to the online repository<br
+/><br
+/>$ git help<br
+/># brings up the help screen<br
+/>$ git help &lt;command&gt;<br
+/># pulls up a webpage with help on the given command<br
+/><br
+/>$ git rebase master<br
+/># reroutes master branch to current branch<br
+/># "rewrites history", be careful!!<br
+/># git won't want to push this: need to use the --force flag on next push to force it<br
+/># (ie $git --force push)<br
+/><br
+/>$ git merge &lt;branch name&gt;<br
+/># merges named branch with the current working branch<br
+/>#this merge is a commit<br
+/><br
+/>$ git commit --amend&nbsp;<br
+/># allows you to change the most recent commit message.&nbsp; will need a --force flag if<br
+/># you've already pushed the changes<br
+/><br
+/># Be very careful with --force, overwrites history depending on what you have done<br
+/><br
+/># education.github.com&nbsp; &lt;-- for discounted premium GitHub<br
+/><br
+/><br
+/>#########<br
+/>#SQLite<br
+/>#########<br
+/><br
+/><a href="http://files.software-carpentry.org/">http://files.software-carpentry.org/</a><br
+/>#download survey.db<br
+/>#download sqlite3.exe<br
+/><br
+/>$ sqlite3 filename<br
+/># opens a file in SQLite<br
+/>sqlite&gt; $.schema<br
+/># shows the structure of the database<br
+/># database structure is nearly impossible to change once it is created! because it has optimal structure<br
+/>sqlite&gt;$SELECT * from Person<br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $;<br
+/>#Person;Survey;Visited;etc.&nbsp;<br
+/>i.e. SELECT * from Person #lets you see the data<br
+/>;<br
+/><br
+/>SELECT * from Site<br
+/>;<br
+/><br
+/>SELECT * from Visited<br
+/>;<br
+/><br
+/>SELECT * from Survey<br
+/>;<br
+/>#end commands with semi colon<br
+/><br
+/>#the commands are case insensitive but are conventionally written in ALL CAPS<br
+/><br
+/>$SELECT name from Site;<br
+/>$SELECT name, name, name from Site;<br
+/>#repeat 'name' 3 times<br
+/>$SELECT family, personal from Person;<br
+/><br
+/>$ SELECT&nbsp; distinct quant from Survey;<br
+/># pull out unique values from variable quant in table survey<br
+/><br
+/>#how to make orders<br
+/>#alpha order names<br
+/>$SELECT * from Person order by ident;<br
+/><br
+/>$SELECT taken, person from Survey order by taken asc, person desc;<br
+/>$SELECT distinct taken, person from Survey order by taken asc, person desc;<br
+/># descending by person after ascending by taken<br
+/><br
+/>#command where(add select condition)<br
+/>$ SELECT * from Visited where site='DR-1';<br
+/>#select site=DR-1 in visited<br
+/>$ SELECT * from Survey where person='lake' or person='roe';<br
+/>#'or'vs'and'<br
+/>$ select distinct person, quant from survey where person='lake' and person='roe';<br
+/>#give unique observation where person=''and person=''<br
+/>$select * from site where (lat&lt;-48)<br
+/><br
+/># select * is equivalent to select all columns<br
+/><br
+/>#can also do calculations<br
+/>$ SELECT 1.05*reading from Survey;<br
+/>#gives the number of reading multi. by 1.05<br
+/>$SELECT AVG(reading) from Survey;<br
+/># Uses the built-in function AVG (average)<br
+/>#add more conditions<br
+/>$SELECT 1.05*reading from Survey where quant='rad';<br
+/>$SELECT AVG(reading) from Survey where quant='rad';<br
+/><br
+/>$ SELECT personal || ' ' || family from Person;<br
+/>#without ||' '||, only gives personal in Person;<br
+/>#here will list both personal and family with a space in the middle<br
+/><br
+/>#data.research.cornell.edu&nbsp; data management services at Cornell<br
+/><br
+/><b>#pitfalls</b><br
+/>$select count(*) from visited;<br
+/>#8<br
+/>$select count(*) from visited where dated&gt;1930-00-00"<br
+/>#5<br
+/>$select count(*) from visited where dated&lt;'...'<br
+/>#2<br
+/>#mistake appears because there is a missing data in date<br
+/># Be very careful with NULL data (empty cells), it fails all comparisons<br
+/><br
+/>$ SELECT * from Visited where dated is NULL;<br
+/>$ SELECT * from Visited where dated is not NULL;<br
+/># it's not a comparison<br
+/><br
+/># When might we want to consider the NULLs?<br
+/>$ SELECT * from survey where quant='sal' and (person!='lake' or person is NULL)<br
+/>$ SELECT * from survey where quant='sal' and person!='lake'&nbsp;<br
+/># Comparing results from these two commands - there's one value where we didn't know which person processed it.<br
+/># Note, != means not equal to.<br
+/><br
+/># Ctrl + L to clear sqlite screen (at least works on Mac)<br
+/><br
+/>#below are all the same; ident from Person and person from Survey are the same. (ident in Visited is a different value)<br
+/>SELECT distinct ident from Person;<br
+/>SELECT distinct ident from Visited;<br
+/>SELECT distinct person from Survey;<br
+/>#this means we can use this to tie in information together.<br
+/><br
+/>$ SELECT * from Site join Visited;<br
+/># Matches every value from site and attaches every value from visited<br
+/># Of course, this isn't necessarily what we want - some of the cases we have combined DR-1 with DR-3, which are not related.<br
+/># However, some of the matches are likely relevant.<br
+/># We can filter this joined dataset by whichever data values match up<br
+/><br
+/>$ SELECT * from Site join Visited where Site.name=Visited.site;<br
+/># Now we have only the pairs that match<br
+/># Thus, we can mix and match existing data tables to grab only the information we want, rather than having one giant data table with all the information.<br
+/><br
+/>$ SELECT * from Site join Visited <b>on</b> Site.name=Visited.site;<br
+/># By using on instead of where, the filtering happens as the cross-product table is generated. This is computationally more efficient.<br
+/><br
+/>$ select site.lat, site.long, visited.dated<br
+/>$ from site join visited<br
+/>$ on site.name=visited.site<br
+/>$ where visited.dated is not null;<br
+/>#ouput is lat, long and dates<br
+/><br
+/>write a query that outputs the rad measurements and their dates<br
+/><br
+/>$ select survey.reading, visited.dated<br
+/>$ from survey join visited<br
+/>$ on survey.taken= visited.ident<br
+/>$ where survey.quant= 'rad' and visited.dated is not null;<br
+/><br
+/>How to use Software Carpentry in practice?<br
+/>software-carpentry.org/v5/<br
+/><a href="http://software-carpentry.org/v5/novice/sql/09-prog.html">http://software-carpentry.org/v5/novice/sql/09-prog.html</a><br
+/><br
+/>$import sqlite3<br
+/>$connection=sqlite3.connect("data")<br
+/>$cursor=connection.cursor()<br
+/>$...<br
+/><br
+/>$insert into site values('DR-3", -50,-120)<br
+/>$delete from person where ident="danforth";<br
+/><br
+/><br
+/><br
+/><br
+/>#####<br
+/>What department are you from?&nbsp; Put an 'x' next your department. If yours isn't here, add it!:<br
+/><br
+/>Animal Science:<br
+/>Crop/Soil Science: XX<br
+/>Ecology &amp; Evolutionary Bio:&nbsp; XX<br
+/>Food Science:<br
+/>Horticulture:&nbsp;&nbsp;<br
+/>Microbiology: XXX<br
+/>Molecular Bio and Genetics:<br
+/>Natural Resources:<br
+/>Nutritional Sciences: X<br
+/>Plant Bio:<br
+/>Plant Breeding:<br
+/>Plant Pathology: X<br
+/>Bioacoustics X<br
+/>Applied Economics and Management: XXX<br
+/><br
+/>Non-Cornell:<br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/><br
+/></body>
+</html>
